@@ -37,6 +37,7 @@
         <a href="#about" class="navlink">About</a>
         <a href="#skills" class="navlink">Skills</a>
         <a href="#projects" class="navlink">Projects</a>
+        <a href="#cs-projects" class="navlink">CS Projects</a>
         <a href="#contact" class="navlink">Contact</a>
       </nav>
       <div class="justify-self-end">
@@ -104,21 +105,53 @@
             <button class="chip skill-chip" type="button">C++</button>
             <button class="chip skill-chip" type="button">SolidWorks</button>
           </div>
-          <div class="mt-5 flex justify-center gap-3">
-            <button class="btn px-4 py-2 bg-blue-600/60 text-white cursor-not-allowed" type="button">Demo</button>
-            <button class="btn px-4 py-2 border border-white/10 bg-white/5 text-white/70 cursor-not-allowed" type="button">Code</button>
+          <div class="mt-4 text-sm text-white/60 mb-3">
+            <span class="font-medium">Hardware:</span> fluxspace-core | <span class="font-medium">Website:</span> fluxspace-site
+          </div>
+          <div class="mt-5 flex flex-wrap justify-center gap-3">
+            <a href="fluxspace-core-demo.html" class="btn px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white">Demo: Core</a>
+            <a href="fluxspace-site-demo.html" class="btn px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white">Demo: Site</a>
+            <a href="https://github.com/aidenerard/fluxspace-core" target="_blank" class="btn px-4 py-2 border border-white/10 bg-white/5 hover:bg-white/10 text-white">Code: Core</a>
+            <a href="https://github.com/aidenerard/fluxspace-site" target="_blank" class="btn px-4 py-2 border border-white/10 bg-white/5 hover:bg-white/10 text-white">Code: Site</a>
           </div>
         </article>
 
         <article class="rounded-2xl border border-white/10 p-6 bg-white/5 sm:col-span-2">
-          <h3 class="text-xl font-semibold">HallPass</h3>
-          <p class="mt-2 text-white/80">Mobile app concept.</p>
+          <h3 class="text-xl font-semibold">GridGuard</h3>
+          <p class="mt-2 text-white/80">Power monitoring and weather-aware risk insights system.</p>
           <div class="mt-4 flex flex-wrap justify-center gap-2">
-            <button class="chip skill-chip" type="button">Swift</button>
+            <button class="chip skill-chip" type="button">Raspberry Pi</button>
+            <button class="chip skill-chip" type="button">Arduino</button>
+            <button class="chip skill-chip" type="button">Web App</button>
+            <button class="chip skill-chip" type="button">IoT</button>
           </div>
           <div class="mt-5 flex justify-center gap-3">
-            <button class="btn px-4 py-2 bg-blue-600/60 text-white cursor-not-allowed" type="button">Demo</button>
-            <button class="btn px-4 py-2 border border-white/10 bg-white/5 text-white/70 cursor-not-allowed" type="button">Code</button>
+            <a href="gridguard-demo.html" class="btn px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white">Demo</a>
+            <a href="https://github.com/aidenerard/gridguard" target="_blank" class="btn px-4 py-2 border border-white/10 bg-white/5 hover:bg-white/10 text-white">Code</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="cs-projects" class="section">
+    <div class="max-w-5xl mx-auto px-6 py-12 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Georgia Tech CS Projects</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <article class="rounded-2xl border border-white/10 p-6 bg-white/5">
+          <h3 class="text-xl font-semibold">CS 1301: Introduction to Computing</h3>
+          <p class="mt-2 text-white/80">Python programming fundamentals and robotics with iRobot Create® 3.</p>
+          <div class="mt-5 flex justify-center gap-3">
+            <a href="cs1301.html" class="btn px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white">View Projects</a>
+            <a href="https://github.com/aidenerard/cs-georgia-tech" target="_blank" class="btn px-4 py-2 border border-white/10 bg-white/5 hover:bg-white/10 text-white">GitHub</a>
+          </div>
+        </article>
+        <article class="rounded-2xl border border-white/10 p-6 bg-white/5">
+          <h3 class="text-xl font-semibold">CS 1331: Introduction to Object Oriented Programming</h3>
+          <p class="mt-2 text-white/80">Object-oriented programming concepts and design patterns.</p>
+          <div class="mt-5 flex justify-center gap-3">
+            <a href="cs1331.html" class="btn px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white">View Projects</a>
+            <a href="https://github.com/aidenerard/cs-georgia-tech" target="_blank" class="btn px-4 py-2 border border-white/10 bg-white/5 hover:bg-white/10 text-white">GitHub</a>
           </div>
         </article>
       </div>
@@ -147,7 +180,7 @@
   </section>
 
   <script>
-    const skills = ["Python","C++","HTML","JavaScript","Swift","Robotics","SolidWorks","ROS"];
+    const skills = ["Python","C++","HTML","JavaScript","Swift","Java","Robotics","SolidWorks","ROS"];
     const grid = document.getElementById("skills-grid");
     skills.forEach((s) => {
       const b = document.createElement("button");

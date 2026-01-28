@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS 1301 | Aiden Erard</title>
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { color-scheme: dark; }
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+    .bg-deep { background: radial-gradient(1200px 600px at 70% -10%, rgba(59,130,246,0.18), transparent 60%), radial-gradient(900px 500px at 10% 110%, rgba(59,130,246,0.12), transparent 60%), #0a0f1a; }
+  </style>
+</head>
+<body class="bg-deep text-white/90">
+  <!-- Top bar back link -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/20 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <a href="index.html#cs-projects" class="inline-flex items-center gap-2 text-white hover:underline">
+        <span aria-hidden="true">&lt;</span> Back to Portfolio
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <!-- Title & subtitle -->
+    <section class="text-center mt-4 mb-10">
+      <h1 class="text-5xl font-extrabold text-blue-400 tracking-tight">CS 1301</h1>
+      <p class="mt-3 text-xl text-white/70">Introduction to Computing</p>
+    </section>
+
+    <!-- Class Overview -->
+    <section class="mb-10">
+      <div class="rounded-2xl bg-white/5 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,.35)] p-6 md:p-8">
+        <h2 class="text-2xl font-bold mb-2">Course Overview</h2>
+        <p class="text-white/70">Python programming fundamentals and robotics</p>
+        <p class="mt-6 text-white/80 leading-8">
+          A hands-on introduction to programming using Python and the iRobot Create® 3 educational robot. This course covers
+          fundamental programming concepts including variables, control structures, functions, and object-oriented programming
+          through real-world robotic applications. Topics include event-driven programming, sensor data processing, autonomous
+          navigation algorithms, pathfinding, and maze-solving techniques.
+        </p>
+        <div class="mt-6">
+          <a href="https://github.com/aidenerard/cs-georgia-tech/tree/main/coursework/CS1301" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg">
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Labs & Projects -->
+    <section class="mb-10">
+      <h2 class="text-3xl font-bold mb-6">Labs &amp; Projects</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <article class="rounded-2xl border border-white/10 p-6 bg-white/5">
+          <h3 class="text-xl font-semibold">Lab 01</h3>
+          <p class="mt-2 text-white/80">Introduction to robotics programming with sensors and basic robot control.</p>
+          <div class="mt-5 flex justify-center gap-3">
+            <a href="cs1301-lab01.html" class="btn px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white">View Lab</a>
+          </div>
+        </article>
+        <article class="rounded-2xl border border-white/10 p-6 bg-white/5">
+          <h3 class="text-xl font-semibold">Lab 02</h3>
+          <p class="mt-2 text-white/80">Advanced robot behaviors including autonomous delivery and interactive games.</p>
+          <div class="mt-5 flex justify-center gap-3">
+            <a href="cs1301-lab02.html" class="btn px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white">View Lab</a>
+          </div>
+        </article>
+        <article class="rounded-2xl border border-white/10 p-6 bg-white/5 sm:col-span-2">
+          <h3 class="text-xl font-semibold">Lab 03</h3>
+          <p class="mt-2 text-white/80">Complex algorithms including maze solving and self-parking capabilities.</p>
+          <div class="mt-5 flex justify-center gap-3">
+            <a href="cs1301-lab03.html" class="btn px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white">View Lab</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-10 text-center text-sm text-white/60">© <span id="year"></span> Aiden Erard</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

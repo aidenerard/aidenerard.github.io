@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Point Graph | CS 1301 Lab 02 | Aiden Erard</title>
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { color-scheme: dark; }
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+    .bg-deep { background: radial-gradient(1200px 600px at 70% -10%, rgba(59,130,246,0.18), transparent 60%), radial-gradient(900px 500px at 10% 110%, rgba(59,130,246,0.12), transparent 60%), #0a0f1a; }
+  </style>
+</head>
+<body class="bg-deep text-white/90">
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/20 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <a href="cs1301-lab02.html" class="inline-flex items-center gap-2 text-white hover:underline">
+        <span aria-hidden="true">&lt;</span> Back to Lab 02
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <section class="text-center mt-4 mb-10">
+      <h1 class="text-5xl font-extrabold text-blue-400 tracking-tight">Point Graph</h1>
+      <p class="mt-3 text-xl text-white/70">CS 1301 Lab 02: Coordinate-Based Navigation</p>
+    </section>
+
+    <section class="mb-10">
+      <div class="rounded-2xl bg-white/5 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,.35)] p-6 md:p-8">
+        <h2 class="text-2xl font-bold mb-2">Project Overview</h2>
+        <p class="text-white/70">Coordinate-based navigation and path planning</p>
+        <p class="mt-6 text-white/80 leading-8">
+          Point Graph implements a coordinate-based navigation system where the robot navigates to specific points in
+          a 2D space. This project demonstrates graph-based path planning, coordinate transformations, and precise
+          positioning algorithms for robotic navigation.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-3xl font-bold mb-6">Demo</h2>
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-4">
+        <p class="text-white/60 text-sm mb-3">TODO: Add demo video or screenshots if available</p>
+        <div class="aspect-video rounded-xl overflow-hidden bg-black/30 ring-1 ring-white/10 flex items-center justify-center">
+          <p class="text-white/40">Demo content placeholder</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8">
+        <h2 class="text-2xl font-bold mb-4">GitHub Repository</h2>
+        <a href="https://github.com/aidenerard/cs-georgia-tech/tree/main/coursework/CS1301/lab02/PointGraph.py" target="_blank" class="inline-flex items-center justify-center w-full md:w-auto gap-2 px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg">
+          View on GitHub
+        </a>
+      </div>
+    </section>
+
+    <section class="mb-6">
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8">
+        <h2 class="text-2xl font-bold mb-4">Key Concepts</h2>
+        <ul class="list-disc pl-6 space-y-2 text-white/80">
+          <li>Coordinate systems and transformations</li>
+          <li>Graph-based path planning algorithms</li>
+          <li>Precise positioning and navigation</li>
+          <li>Distance and angle calculations</li>
+          <li>Data structures for spatial representation</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-10 text-center text-sm text-white/60">© <span id="year"></span> Aiden Erard</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
