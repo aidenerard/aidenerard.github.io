@@ -27,19 +27,19 @@
     <!-- Title & subtitle -->
     <section class="text-center mt-4 mb-10">
       <h1 class="text-5xl font-extrabold text-blue-400 tracking-tight">Tempr</h1>
-      <p class="mt-3 text-xl text-white/70">Full-stack mobile app for real-time temperature monitoring</p>
+      <p class="mt-3 text-xl text-white/70">AI-powered music app that generates personalized queues from your mood, photos, and calendar</p>
     </section>
 
     <!-- Project Overview card -->
     <section class="mb-10">
       <div class="rounded-2xl bg-white/5 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,.35)] p-6 md:p-8">
         <h2 class="text-2xl font-bold mb-2">Project Overview</h2>
-        <p class="text-white/70">Mobile application built with React Native, Node.js, and Tailwind</p>
+        <p class="text-white/70">Expo (React Native) · TypeScript · Gemini API · Spotify Web API · Supabase Auth</p>
         <p class="mt-6 text-white/80 leading-8">
-          Tempr is a full-stack mobile application that provides real-time temperature monitoring and tracking.
-          Built with React Native for cross-platform mobile support, a Node.js backend for data processing,
-          and styled with Tailwind for a clean, modern interface. The app delivers live sensor data and
-          intuitive visualizations to users on both iOS and Android devices.
+          Tempr solves Spotify Choice Paralysis — that feeling of endlessly scrolling your liked songs and finding nothing that fits the vibe.
+          Users describe a mood, upload a photo, or let the app read their calendar, and Tempr uses Gemini to convert that context into a
+          target vibe vector. It then runs a cosine-similarity nearest-neighbor search across the user's Spotify library
+          (using audio features like energy, danceability, valence, and acousticness) to queue the best-matching tracks directly in Spotify.
         </p>
       </div>
     </section>
@@ -62,7 +62,7 @@
     <section class="mb-10">
       <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8">
         <h2 class="text-2xl font-bold mb-4">Live Demo</h2>
-        <p class="text-white/70 mb-4">View the live Tempr app and interface.</p>
+        <p class="text-white/70 mb-4">View the live Tempr web interface.</p>
         <a href="https://tempr-amber.vercel.app/" target="_blank" class="inline-flex items-center justify-center w-full md:w-auto gap-2 px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg">
           Open Live Site
         </a>
@@ -84,11 +84,12 @@
       <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8">
         <h2 class="text-2xl font-bold mb-4">Key Features &amp; Impact</h2>
         <ul class="list-disc pl-6 space-y-2 text-white/80">
-          <li>Cross-platform mobile app for iOS and Android using React Native</li>
-          <li>Real-time temperature data streaming and visualization</li>
-          <li>Node.js backend for efficient data ingestion and API endpoints</li>
-          <li>Clean, responsive UI styled with Tailwind</li>
-          <li>Live site deployed and accessible via Vercel</li>
+          <li>Mood-to-queue generation via text prompt or photo using Gemini's vision and language models</li>
+          <li>Calendar integration that auto-generates playlists for upcoming events with a 10-minute notification</li>
+          <li>Cosine-similarity vector search over Spotify audio features for accurate vibe matching</li>
+          <li>Memories library to save and re-queue past generated playlists in one tap</li>
+          <li>Discover mode with swipe-to-like and YouTube video previews for finding new music</li>
+          <li>Batched Spotify searches and AsyncStorage caching to keep generation fast and reliable</li>
         </ul>
       </div>
     </section>
