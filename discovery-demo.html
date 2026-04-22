@@ -27,7 +27,7 @@
     <!-- Title -->
     <section class="text-center mt-4">
       <h1 class="text-5xl font-extrabold text-blue-400 tracking-tight">Discovery Project</h1>
-      <p class="mt-3 text-xl text-white/70">ECE 1100 — Georgia Tech</p>
+      <p class="mt-3 text-xl text-white/70">ECE 1100 | Georgia Tech</p>
       <div class="mt-4 flex flex-wrap justify-center gap-2">
         <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-600/20 text-blue-300 border border-blue-500/30">CreateX</span>
         <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/5 text-white/60 border border-white/10">Embedded Systems</span>
@@ -41,17 +41,12 @@
       <div class="rounded-2xl bg-white/5 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,.35)] p-6 md:p-8">
         <h2 class="text-2xl font-bold mb-1">Project Idea</h2>
         <p class="text-blue-300/80 text-sm mb-6">Built for CreateX and other GT startup programs</p>
-        <div class="space-y-4 text-white/80 leading-8">
-          <p>
-            The project started with a magnetometer — the goal was to detect rebar and hidden metal inside concrete using grid-based magnetic field measurements. The idea was simple: move a sensor across a surface, log the readings, and build a map of what's underneath.
-          </p>
-          <p>
-            From there, an RGB-D camera was added to tie each sensor reading to a physical position in space, enabling early 2D and 3D maps of subsurface structure.
-          </p>
-          <p>
-            The concept then pivoted toward drone-based inspection to remove the need for lifts and scaffolding entirely. The final direction: a drone-mounted GPR system with a gimbal to scan structures from a distance and retrieve rebar depth data without any surface contact.
-          </p>
-        </div>
+        <ul class="space-y-3 text-white/80 leading-7">
+          <li class="flex gap-3"><span class="text-blue-400 mt-1 flex-shrink-0">&#8226;</span>Started with a magnetometer to detect rebar and hidden metal inside concrete using grid-based magnetic field measurements</li>
+          <li class="flex gap-3"><span class="text-blue-400 mt-1 flex-shrink-0">&#8226;</span>Added an RGB-D camera to tie sensor readings to physical position and build early 2D and 3D maps</li>
+          <li class="flex gap-3"><span class="text-blue-400 mt-1 flex-shrink-0">&#8226;</span>Pivoted the idea toward drone-based inspection to eliminate lifts and scaffolding</li>
+          <li class="flex gap-3"><span class="text-blue-400 mt-1 flex-shrink-0">&#8226;</span>Final direction: drone-mounted GPR with a gimbal to scan structures from a distance and get rebar depth without surface contact</li>
+        </ul>
       </div>
     </section>
 
@@ -60,7 +55,7 @@
       <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8">
         <h2 class="text-2xl font-bold mb-6">Project Progress</h2>
 
-        <!-- Video placeholder — uncomment and add YouTube ID when ready -->
+        <!-- Video placeholder: uncomment and add YouTube ID when ready -->
         <!--
         <div class="aspect-video rounded-xl overflow-hidden bg-black/30 ring-1 ring-white/10 mb-8">
           <iframe width="100%" height="100%"
@@ -74,7 +69,7 @@
         <ol class="space-y-5">
           <li class="flex gap-4">
             <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">1</span>
-            <p class="text-white/80 leading-7">Built a full embedded sensing pipeline with a Raspberry Pi and magnetometer — real-time logging, noise filtering, and 2D heatmap generation.</p>
+            <p class="text-white/80 leading-7">Built a full embedded sensing pipeline with a Raspberry Pi and magnetometer: real-time logging, noise filtering, and 2D heatmap generation.</p>
           </li>
           <li class="flex gap-4">
             <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">2</span>
@@ -90,7 +85,7 @@
           </li>
           <li class="flex gap-4">
             <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">5</span>
-            <p class="text-white/80 leading-7">Recognized the commercial opportunity through CreateX and decided to pursue Verus — an AI platform automating GPR bridge deck analysis, replacing a largely manual inspection process.</p>
+            <p class="text-white/80 leading-7">Recognized the commercial opportunity through CreateX and decided to pursue Verus, an AI platform automating GPR bridge deck analysis, replacing a largely manual inspection process.</p>
           </li>
           <li class="flex gap-4">
             <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">6</span>
@@ -120,7 +115,7 @@
           <div class="rounded-xl bg-green-500/5 border border-green-500/20 p-5">
             <h3 class="text-lg font-semibold text-green-400 mb-4">Successes</h3>
             <ul class="space-y-3 text-white/80 leading-7 text-sm">
-              <li class="flex gap-2"><span class="text-green-400 mt-0.5">✓</span> Full hardware-software pipeline working end-to-end — sensor to Raspberry Pi to heatmaps.</li>
+              <li class="flex gap-2"><span class="text-green-400 mt-0.5">✓</span> Full hardware-software pipeline working end-to-end: sensor to Raspberry Pi to heatmaps.</li>
               <li class="flex gap-2"><span class="text-green-400 mt-0.5">✓</span> Built and deployed a complete AI pipeline from raw GPR signals to a live web product.</li>
               <li class="flex gap-2"><span class="text-green-400 mt-0.5">✓</span> Ranked top 10% at Y Combinator across two batches, secured a PearX Ventures interview, and competing in the Klaus Fusen World Competition.</li>
             </ul>
@@ -128,8 +123,8 @@
           <div class="rounded-xl bg-red-500/5 border border-red-500/20 p-5">
             <h3 class="text-lg font-semibold text-red-400 mb-4">Failures</h3>
             <ul class="space-y-3 text-white/80 leading-7 text-sm">
-              <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> Early sensor data was noisy and inconsistent — took significant time to separate signal from noise from real anomaly.</li>
-              <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> 3D mapping proved harder than expected — aligning sensor data with spatial position is non-trivial.</li>
+              <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> Early sensor data was noisy and inconsistent; took significant time to separate signal from noise from real anomaly.</li>
+              <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> 3D mapping proved harder than expected; aligning sensor data with spatial position is non-trivial.</li>
               <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> Magnetometer alone had fundamental depth limits, forcing a pivot to GPR.</li>
               <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> Six consecutive feature-engineering approaches in the ML model failed before switching to a neural network architecture.</li>
             </ul>
@@ -161,7 +156,7 @@
           </div>
           <div class="rounded-xl bg-white/5 border border-white/10 p-4 sm:col-span-2">
             <h3 class="text-sm font-semibold text-blue-300 uppercase tracking-wide mb-2">Systems Integration</h3>
-            <p class="text-white/70 text-sm leading-6">End-to-end pipeline from raw sensor data through preprocessing, neural network inference, server, and deployed frontend — all in one product.</p>
+            <p class="text-white/70 text-sm leading-6">End-to-end pipeline from raw sensor data through preprocessing, neural network inference, server, and deployed frontend, all in one product.</p>
           </div>
         </div>
       </div>
@@ -188,7 +183,7 @@
             Somewhere around month two this stopped feeling like a class project. The problems got real, the stakes got higher, and the work started to matter in a different way.
           </p>
           <p>
-            I learned more from the failures than the successes. Debugging a noisy sensor pipeline, watching six ML approaches fail, figuring out why 3D alignment was breaking — that's where the actual knowledge came from. Iteration under constraint taught me more than any clean result would have.
+            I learned more from the failures than the successes. Debugging a noisy sensor pipeline, watching six ML approaches fail, figuring out why 3D alignment was breaking; that's where the actual knowledge came from. Iteration under constraint taught me more than any clean result would have.
           </p>
           <p>
             CreateX pushed me to think in terms of industry and real use cases, not just in terms of what would satisfy an ECE requirement. That shift in framing changed how I approached every technical decision.
@@ -207,7 +202,7 @@
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
 
           <div>
-            <p class="text-xs text-white/50 mb-2 font-medium uppercase tracking-wide">PearX — Founder</p>
+            <p class="text-xs text-white/50 mb-2 font-medium uppercase tracking-wide">PearX:Founder</p>
             <div class="aspect-video rounded-lg overflow-hidden bg-black/30 ring-1 ring-white/10">
               <iframe width="100%" height="100%"
                 src="https://www.youtube-nocookie.com/embed/y54mAY_ZxYY?rel=0&modestbranding=1"
@@ -218,7 +213,7 @@
           </div>
 
           <div>
-            <p class="text-xs text-white/50 mb-2 font-medium uppercase tracking-wide">PearX — Demo</p>
+            <p class="text-xs text-white/50 mb-2 font-medium uppercase tracking-wide">PearX:Demo</p>
             <div class="aspect-video rounded-lg overflow-hidden bg-black/30 ring-1 ring-white/10">
               <iframe width="100%" height="100%"
                 src="https://www.youtube-nocookie.com/embed/a5z9hfaK3SU?rel=0&modestbranding=1"
@@ -229,7 +224,7 @@
           </div>
 
           <div>
-            <p class="text-xs text-white/50 mb-2 font-medium uppercase tracking-wide">YC X26 — Founder</p>
+            <p class="text-xs text-white/50 mb-2 font-medium uppercase tracking-wide">YC X26:Founder</p>
             <div class="aspect-video rounded-lg overflow-hidden bg-black/30 ring-1 ring-white/10">
               <iframe width="100%" height="100%"
                 src="https://www.youtube-nocookie.com/embed/LhaEIdsgELo?rel=0&modestbranding=1"
@@ -240,7 +235,7 @@
           </div>
 
           <div>
-            <p class="text-xs text-white/50 mb-2 font-medium uppercase tracking-wide">YC X26 — Demo</p>
+            <p class="text-xs text-white/50 mb-2 font-medium uppercase tracking-wide">YC X26:Demo</p>
             <div class="aspect-video rounded-lg overflow-hidden bg-black/30 ring-1 ring-white/10">
               <iframe width="100%" height="100%"
                 src="https://www.youtube-nocookie.com/embed/FVNtIBhANsE?rel=0&modestbranding=1"
@@ -251,7 +246,7 @@
           </div>
 
           <div>
-            <p class="text-xs text-white/50 mb-2 font-medium uppercase tracking-wide">Startup Launch — Founder</p>
+            <p class="text-xs text-white/50 mb-2 font-medium uppercase tracking-wide">Startup Launch:Founder</p>
             <div class="aspect-video rounded-lg overflow-hidden bg-black/30 ring-1 ring-white/10">
               <iframe width="100%" height="100%"
                 src="https://www.youtube-nocookie.com/embed/7oQ3IdqPtwg?rel=0&modestbranding=1"
