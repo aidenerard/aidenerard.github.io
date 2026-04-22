@@ -100,34 +100,34 @@
 
           <div class="md:col-span-1 row-span-2">
             <div class="h-full rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/hardware-setup.jpg" alt="Drone with Raspberry Pi and magnetometer board" class="w-full h-full object-cover">
+              <img src="media/discovery/hardware-setup.jpg" alt="Drone with Raspberry Pi and magnetometer board" class="w-full h-full object-cover gallery-img">
             </div>
           </div>
 
           <div>
             <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/heatmap-idw.png" alt="IDW heatmap of local magnetic anomaly" class="w-full object-cover">
+              <img src="media/discovery/heatmap-idw.png" alt="IDW heatmap of local magnetic anomaly" class="w-full object-cover gallery-img">
             </div>
             <p class="text-xs text-white/40 mt-1.5">IDW heatmap — local anomaly detection</p>
           </div>
 
           <div>
             <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/scatter-btotal.png" alt="XY scatter plot of total magnetic field" class="w-full object-cover">
+              <img src="media/discovery/scatter-btotal.png" alt="XY scatter plot of total magnetic field" class="w-full object-cover gallery-img">
             </div>
             <p class="text-xs text-white/40 mt-1.5">XY scatter — B_total across scan grid</p>
           </div>
 
           <div>
             <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/heatmap-early.png" alt="Early heatmap output" class="w-full object-cover">
+              <img src="media/discovery/heatmap-early.png" alt="Early heatmap output" class="w-full object-cover gallery-img">
             </div>
             <p class="text-xs text-white/40 mt-1.5">Early heatmap output</p>
           </div>
 
           <div>
             <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/sensor-data-csv.png" alt="Raw sensor data CSV log" class="w-full object-cover">
+              <img src="media/discovery/sensor-data-csv.png" alt="Raw sensor data CSV log" class="w-full object-cover gallery-img">
             </div>
             <p class="text-xs text-white/40 mt-1.5">Raw sensor data log</p>
           </div>
@@ -145,35 +145,35 @@
 
           <div>
             <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/verus-app-ui.png" alt="Verus app inspection method panel" class="w-full h-auto">
+              <img src="media/discovery/verus-app-ui.png" alt="Verus app inspection method panel" class="w-full h-auto gallery-img">
             </div>
             <p class="text-xs text-white/40 mt-1.5">Verus app UI</p>
           </div>
 
           <div>
             <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/rebar-depth-map.png" alt="Bridge 440029 rebar depth contour map" class="w-full h-auto">
+              <img src="media/discovery/rebar-depth-map.png" alt="Bridge 440029 rebar depth contour map" class="w-full h-auto gallery-img">
             </div>
             <p class="text-xs text-white/40 mt-1.5">Bridge 440029 rebar depth map</p>
           </div>
 
           <div>
             <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/cscan-condition-map.png" alt="C-SCAN bridge deck condition map" class="w-full h-auto">
+              <img src="media/discovery/cscan-condition-map.png" alt="C-SCAN bridge deck condition map" class="w-full h-auto gallery-img">
             </div>
             <p class="text-xs text-white/40 mt-1.5">C-SCAN condition map — 76,924 signals</p>
           </div>
 
           <div>
             <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/gpr-signal-csv.png" alt="Raw GPR signal CSV data" class="w-full h-auto">
+              <img src="media/discovery/gpr-signal-csv.png" alt="Raw GPR signal CSV data" class="w-full h-auto gallery-img">
             </div>
             <p class="text-xs text-white/40 mt-1.5">Raw GPR signal data</p>
           </div>
 
           <div>
             <div class="rounded-xl overflow-hidden bg-white ring-1 ring-white/10">
-              <img src="media/discovery/1dcnn-architecture.webp" alt="1D CNN architecture diagram" class="w-full h-auto p-2">
+              <img src="media/discovery/1dcnn-architecture.webp" alt="1D CNN architecture diagram" class="w-full h-auto p-2 gallery-img">
             </div>
             <p class="text-xs text-white/40 mt-1.5">1D-CNN model architecture</p>
           </div>
@@ -349,7 +349,38 @@
 
   </main>
 
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 hidden" role="dialog" aria-modal="true">
+    <button id="lightbox-close" class="absolute top-4 right-5 text-white/70 hover:text-white text-4xl font-light leading-none">&times;</button>
+    <img id="lightbox-img" src="" alt="" class="max-w-[90vw] max-h-[90vh] rounded-xl shadow-2xl object-contain">
+  </div>
+
   <footer class="py-10 text-center text-sm text-white/60">© <span id="year"></span> Aiden Erard</footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.gallery-img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.add('hidden');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
 </body>
 </html>
