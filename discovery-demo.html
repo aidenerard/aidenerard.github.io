@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Discovery | Aiden Erard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { color-scheme: dark; }
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+    .bg-deep { background: radial-gradient(1200px 600px at 70% -10%, rgba(59,130,246,0.18), transparent 60%), radial-gradient(900px 500px at 10% 110%, rgba(59,130,246,0.12), transparent 60%), #0a0f1a; }
+    .phase-line { position: relative; }
+    .phase-line::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: -2rem;
+      bottom: -2rem;
+      width: 2px;
+      background: linear-gradient(to bottom, transparent, rgba(59,130,246,0.3), transparent);
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body class="bg-deep text-white/90">
+
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/20 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <a href="index.html#projects" class="inline-flex items-center gap-2 text-white hover:underline">
+        <span aria-hidden="true">&lt;</span> Back to Portfolio
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12">
+
+    <!-- Title -->
+    <section class="text-center mt-4 mb-10">
+      <h1 class="text-5xl font-extrabold text-blue-400 tracking-tight">Discovery</h1>
+      <p class="mt-3 text-xl text-white/70">Project subtitle goes here</p>
+      <span class="mt-4 inline-block px-3 py-1 rounded-full text-xs font-semibold bg-blue-600/20 text-blue-300 border border-blue-500/30">In Progress</span>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="mb-12">
+      <div class="rounded-2xl bg-white/5 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,.35)] p-6 md:p-8">
+        <h2 class="text-2xl font-bold mb-2">Project Overview</h2>
+        <p class="text-white/70">Short tagline or one-liner description</p>
+        <p class="mt-6 text-white/80 leading-8">
+          Full project description goes here. Explain what the project is, what problem it solves, and why you built it.
+        </p>
+        <!-- Uncomment and fill in as needed:
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg">GitHub</a>
+          <a href="#" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-white">Website</a>
+        </div>
+        -->
+      </div>
+    </section>
+
+    <!-- Development Journey -->
+    <section class="mb-4">
+      <h2 class="text-3xl font-bold mb-2">Development Journey</h2>
+      <p class="text-white/60 mb-10">A walkthrough of how this project evolved — from initial concept to current state.</p>
+
+      <div class="space-y-10">
+
+        <!-- Phase 1 -->
+        <article class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+          <div class="p-6 md:p-8">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-sm font-bold text-blue-300">1</span>
+              <h3 class="text-xl font-semibold">Phase 1: Title</h3>
+            </div>
+            <p class="text-white/80 leading-8 mb-6">
+              Description of this development phase. What were the goals, what did you build or figure out, what challenges came up?
+            </p>
+            <!-- Video embed — replace VIDEO_ID with the YouTube ID -->
+            <!--
+            <div class="aspect-video rounded-xl overflow-hidden bg-black/30 ring-1 ring-white/10">
+              <iframe width="100%" height="100%"
+                src="https://www.youtube-nocookie.com/embed/VIDEO_ID?rel=0&modestbranding=1"
+                title="Phase 1 video" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            -->
+          </div>
+        </article>
+
+        <!-- Phase 2 -->
+        <article class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+          <div class="p-6 md:p-8">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-sm font-bold text-blue-300">2</span>
+              <h3 class="text-xl font-semibold">Phase 2: Title</h3>
+            </div>
+            <p class="text-white/80 leading-8 mb-6">
+              Description of this development phase.
+            </p>
+            <!-- Video embed placeholder -->
+            <!--
+            <div class="aspect-video rounded-xl overflow-hidden bg-black/30 ring-1 ring-white/10">
+              <iframe width="100%" height="100%"
+                src="https://www.youtube-nocookie.com/embed/VIDEO_ID?rel=0&modestbranding=1"
+                title="Phase 2 video" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            -->
+          </div>
+        </article>
+
+        <!-- Phase 3 -->
+        <article class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+          <div class="p-6 md:p-8">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-sm font-bold text-blue-300">3</span>
+              <h3 class="text-xl font-semibold">Phase 3: Title</h3>
+            </div>
+            <p class="text-white/80 leading-8 mb-6">
+              Description of this development phase.
+            </p>
+            <!-- Video embed placeholder -->
+            <!--
+            <div class="aspect-video rounded-xl overflow-hidden bg-black/30 ring-1 ring-white/10">
+              <iframe width="100%" height="100%"
+                src="https://www.youtube-nocookie.com/embed/VIDEO_ID?rel=0&modestbranding=1"
+                title="Phase 3 video" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            -->
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="py-10 text-center text-sm text-white/60">© <span id="year"></span> Aiden Erard</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
