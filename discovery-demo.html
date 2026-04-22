@@ -10,17 +10,6 @@
     :root { color-scheme: dark; }
     body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; }
     .bg-deep { background: radial-gradient(1200px 600px at 70% -10%, rgba(59,130,246,0.18), transparent 60%), radial-gradient(900px 500px at 10% 110%, rgba(59,130,246,0.12), transparent 60%), #0a0f1a; }
-    .phase-line { position: relative; }
-    .phase-line::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: -2rem;
-      bottom: -2rem;
-      width: 2px;
-      background: linear-gradient(to bottom, transparent, rgba(59,130,246,0.3), transparent);
-      transform: translateX(-50%);
-    }
   </style>
 </head>
 <body class="bg-deep text-white/90">
@@ -33,108 +22,181 @@
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-6 py-12">
+  <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
 
     <!-- Title -->
-    <section class="text-center mt-4 mb-10">
+    <section class="text-center mt-4">
       <h1 class="text-5xl font-extrabold text-blue-400 tracking-tight">Discovery Project</h1>
-      <p class="mt-3 text-xl text-white/70">Project subtitle goes here</p>
-      <span class="mt-4 inline-block px-3 py-1 rounded-full text-xs font-semibold bg-blue-600/20 text-blue-300 border border-blue-500/30">In Progress</span>
-    </section>
-
-    <!-- Project Overview -->
-    <section class="mb-12">
-      <div class="rounded-2xl bg-white/5 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,.35)] p-6 md:p-8">
-        <h2 class="text-2xl font-bold mb-2">Project Overview</h2>
-        <p class="text-white/70">Short tagline or one-liner description</p>
-        <p class="mt-6 text-white/80 leading-8">
-          Full project description goes here. Explain what the project is, what problem it solves, and why you built it.
-        </p>
-        <!-- Uncomment and fill in as needed:
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg">GitHub</a>
-          <a href="#" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-white">Website</a>
-        </div>
-        -->
+      <p class="mt-3 text-xl text-white/70">ECE 1100 — Georgia Tech</p>
+      <div class="mt-4 flex flex-wrap justify-center gap-2">
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-600/20 text-blue-300 border border-blue-500/30">CreateX</span>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/5 text-white/60 border border-white/10">Embedded Systems</span>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/5 text-white/60 border border-white/10">Signal Processing</span>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/5 text-white/60 border border-white/10">ML Engineering</span>
       </div>
     </section>
 
-    <!-- Development Journey -->
-    <section class="mb-4">
-      <h2 class="text-3xl font-bold mb-2">Development Journey</h2>
-      <p class="text-white/60 mb-10">A walkthrough of how this project evolved — from initial concept to current state.</p>
+    <!-- a. Project Idea -->
+    <section>
+      <div class="rounded-2xl bg-white/5 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,.35)] p-6 md:p-8">
+        <h2 class="text-2xl font-bold mb-1">Project Idea</h2>
+        <p class="text-blue-300/80 text-sm mb-6">Built for CreateX and other GT startup programs</p>
+        <div class="space-y-4 text-white/80 leading-8">
+          <p>
+            The project started with a magnetometer — the goal was to detect rebar and hidden metal inside concrete using grid-based magnetic field measurements. The idea was simple: move a sensor across a surface, log the readings, and build a map of what's underneath.
+          </p>
+          <p>
+            From there, an RGB-D camera was added to tie each sensor reading to a physical position in space, enabling early 2D and 3D maps of subsurface structure.
+          </p>
+          <p>
+            The concept then pivoted toward drone-based inspection to remove the need for lifts and scaffolding entirely. The final direction: a drone-mounted GPR system with a gimbal to scan structures from a distance and retrieve rebar depth data without any surface contact.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <div class="space-y-10">
+    <!-- b. Project Progress -->
+    <section>
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8">
+        <h2 class="text-2xl font-bold mb-6">Project Progress</h2>
 
-        <!-- Phase 1 -->
-        <article class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
-          <div class="p-6 md:p-8">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-sm font-bold text-blue-300">1</span>
-              <h3 class="text-xl font-semibold">Phase 1: Title</h3>
-            </div>
-            <p class="text-white/80 leading-8 mb-6">
-              Description of this development phase. What were the goals, what did you build or figure out, what challenges came up?
-            </p>
-            <!-- Video embed — replace VIDEO_ID with the YouTube ID -->
-            <!--
-            <div class="aspect-video rounded-xl overflow-hidden bg-black/30 ring-1 ring-white/10">
-              <iframe width="100%" height="100%"
-                src="https://www.youtube-nocookie.com/embed/VIDEO_ID?rel=0&modestbranding=1"
-                title="Phase 1 video" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            -->
+        <!-- Video placeholder — uncomment and add YouTube ID when ready -->
+        <!--
+        <div class="aspect-video rounded-xl overflow-hidden bg-black/30 ring-1 ring-white/10 mb-8">
+          <iframe width="100%" height="100%"
+            src="https://www.youtube-nocookie.com/embed/VIDEO_ID?rel=0&modestbranding=1"
+            title="Project Progress" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        -->
+
+        <ol class="space-y-5">
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">1</span>
+            <p class="text-white/80 leading-7">Built a full embedded sensing pipeline with a Raspberry Pi and magnetometer — real-time logging, noise filtering, and 2D heatmap generation.</p>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">2</span>
+            <p class="text-white/80 leading-7">Ran real scans on a metal-embedded concrete slab and detected internal metal patterns in the output data.</p>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">3</span>
+            <p class="text-white/80 leading-7">Integrated RGB-D camera data to generate point clouds and early 3D mesh representations of scanned surfaces.</p>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">4</span>
+            <p class="text-white/80 leading-7">Explored AirSim for autonomous, repeatable scan paths and shifted the sensor approach toward GPR for depth-based subsurface data.</p>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">5</span>
+            <p class="text-white/80 leading-7">Recognized the commercial opportunity through CreateX and decided to pursue Verus — an AI platform automating GPR bridge deck analysis, replacing a largely manual inspection process.</p>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">6</span>
+            <p class="text-white/80 leading-7">Trained a 1D-CNN on over 650,000 labeled GPR signals across sixteen model versions, deployed a live inference server, and began inspecting real bridge data directly from a professional GPR firm.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- c. Successes and Failures -->
+    <section>
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8">
+        <h2 class="text-2xl font-bold mb-6">Successes &amp; Failures</h2>
+
+        <!-- Video placeholder -->
+        <!--
+        <div class="aspect-video rounded-xl overflow-hidden bg-black/30 ring-1 ring-white/10 mb-8">
+          <iframe width="100%" height="100%"
+            src="https://www.youtube-nocookie.com/embed/VIDEO_ID?rel=0&modestbranding=1"
+            title="Successes and Failures" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        -->
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-xl bg-green-500/5 border border-green-500/20 p-5">
+            <h3 class="text-lg font-semibold text-green-400 mb-4">Successes</h3>
+            <ul class="space-y-3 text-white/80 leading-7 text-sm">
+              <li class="flex gap-2"><span class="text-green-400 mt-0.5">✓</span> Full hardware-software pipeline working end-to-end — sensor to Raspberry Pi to heatmaps.</li>
+              <li class="flex gap-2"><span class="text-green-400 mt-0.5">✓</span> Built and deployed a complete AI pipeline from raw GPR signals to a live web product.</li>
+              <li class="flex gap-2"><span class="text-green-400 mt-0.5">✓</span> Ranked top 10% at Y Combinator across two batches, secured a PearX Ventures interview, and competing in the Klaus Fusen World Competition.</li>
+            </ul>
           </div>
-        </article>
-
-        <!-- Phase 2 -->
-        <article class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
-          <div class="p-6 md:p-8">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-sm font-bold text-blue-300">2</span>
-              <h3 class="text-xl font-semibold">Phase 2: Title</h3>
-            </div>
-            <p class="text-white/80 leading-8 mb-6">
-              Description of this development phase.
-            </p>
-            <!-- Video embed placeholder -->
-            <!--
-            <div class="aspect-video rounded-xl overflow-hidden bg-black/30 ring-1 ring-white/10">
-              <iframe width="100%" height="100%"
-                src="https://www.youtube-nocookie.com/embed/VIDEO_ID?rel=0&modestbranding=1"
-                title="Phase 2 video" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            -->
+          <div class="rounded-xl bg-red-500/5 border border-red-500/20 p-5">
+            <h3 class="text-lg font-semibold text-red-400 mb-4">Failures</h3>
+            <ul class="space-y-3 text-white/80 leading-7 text-sm">
+              <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> Early sensor data was noisy and inconsistent — took significant time to separate signal from noise from real anomaly.</li>
+              <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> 3D mapping proved harder than expected — aligning sensor data with spatial position is non-trivial.</li>
+              <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> Magnetometer alone had fundamental depth limits, forcing a pivot to GPR.</li>
+              <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> Six consecutive feature-engineering approaches in the ML model failed before switching to a neural network architecture.</li>
+            </ul>
           </div>
-        </article>
+        </div>
+      </div>
+    </section>
 
-        <!-- Phase 3 -->
-        <article class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
-          <div class="p-6 md:p-8">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-sm font-bold text-blue-300">3</span>
-              <h3 class="text-xl font-semibold">Phase 3: Title</h3>
-            </div>
-            <p class="text-white/80 leading-8 mb-6">
-              Description of this development phase.
-            </p>
-            <!-- Video embed placeholder -->
-            <!--
-            <div class="aspect-video rounded-xl overflow-hidden bg-black/30 ring-1 ring-white/10">
-              <iframe width="100%" height="100%"
-                src="https://www.youtube-nocookie.com/embed/VIDEO_ID?rel=0&modestbranding=1"
-                title="Phase 3 video" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            -->
+    <!-- d. ECE Skills Gained -->
+    <section>
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8">
+        <h2 class="text-2xl font-bold mb-6">ECE Skills Gained</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+            <h3 class="text-sm font-semibold text-blue-300 uppercase tracking-wide mb-2">Embedded Systems</h3>
+            <p class="text-white/70 text-sm leading-6">I2C sensor integration with Raspberry Pi, hardware debugging across the full sensing pipeline.</p>
           </div>
-        </article>
+          <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+            <h3 class="text-sm font-semibold text-blue-300 uppercase tracking-wide mb-2">Signal Processing</h3>
+            <p class="text-white/70 text-sm leading-6">GPR waveform filtering, amplitude analysis, and electromagnetic wave propagation in subsurface media.</p>
+          </div>
+          <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+            <h3 class="text-sm font-semibold text-blue-300 uppercase tracking-wide mb-2">ML Engineering</h3>
+            <p class="text-white/70 text-sm leading-6">1D CNNs in PyTorch, focal loss for class imbalance, weighted sampling, and precision-recall optimization.</p>
+          </div>
+          <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+            <h3 class="text-sm font-semibold text-blue-300 uppercase tracking-wide mb-2">Computer Vision</h3>
+            <p class="text-white/70 text-sm leading-6">RGB-D cameras, point cloud generation, and early 3D mesh construction from sensor data.</p>
+          </div>
+          <div class="rounded-xl bg-white/5 border border-white/10 p-4 sm:col-span-2">
+            <h3 class="text-sm font-semibold text-blue-300 uppercase tracking-wide mb-2">Systems Integration</h3>
+            <p class="text-white/70 text-sm leading-6">End-to-end pipeline from raw sensor data through preprocessing, neural network inference, server, and deployed frontend — all in one product.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- e. Final Thoughts -->
+    <section>
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8">
+        <h2 class="text-2xl font-bold mb-6">Final Thoughts</h2>
+
+        <!-- Video placeholder -->
+        <!--
+        <div class="aspect-video rounded-xl overflow-hidden bg-black/30 ring-1 ring-white/10 mb-8">
+          <iframe width="100%" height="100%"
+            src="https://www.youtube-nocookie.com/embed/VIDEO_ID?rel=0&modestbranding=1"
+            title="Final Thoughts" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        -->
+
+        <div class="space-y-4 text-white/80 leading-8">
+          <p>
+            Somewhere around month two this stopped feeling like a class project. The problems got real, the stakes got higher, and the work started to matter in a different way.
+          </p>
+          <p>
+            I learned more from the failures than the successes. Debugging a noisy sensor pipeline, watching six ML approaches fail, figuring out why 3D alignment was breaking — that's where the actual knowledge came from. Iteration under constraint taught me more than any clean result would have.
+          </p>
+          <p>
+            CreateX pushed me to think in terms of industry and real use cases, not just in terms of what would satisfy an ECE requirement. That shift in framing changed how I approached every technical decision.
+          </p>
+          <p>
+            The project is continuing after this class. Verus is moving into Startup Launch this summer and we're continuing to apply to other startup incubators. What started as a magnetometer experiment is now a deployed AI product being tested on real bridge data.
+          </p>
+        </div>
       </div>
     </section>
 
