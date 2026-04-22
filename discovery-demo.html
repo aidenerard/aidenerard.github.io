@@ -81,14 +81,10 @@
           </li>
           <li class="flex gap-4">
             <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">4</span>
-            <p class="text-white/80 leading-7">Explored AirSim for autonomous, repeatable scan paths and shifted the sensor approach toward GPR for depth-based subsurface data.</p>
-          </li>
-          <li class="flex gap-4">
-            <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">5</span>
             <p class="text-white/80 leading-7">Recognized the commercial opportunity through CreateX and decided to pursue Verus, an AI platform automating GPR bridge deck analysis, replacing a largely manual inspection process.</p>
           </li>
           <li class="flex gap-4">
-            <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">6</span>
+            <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">5</span>
             <p class="text-white/80 leading-7">Trained a 1D-CNN on over 650,000 labeled GPR signals across sixteen model versions, deployed a live inference server, and began inspecting real bridge data directly from a professional GPR firm.</p>
           </li>
         </ol>
@@ -169,7 +165,7 @@
             <h3 class="text-lg font-semibold text-red-400 mb-4">Failures</h3>
             <ul class="space-y-3 text-white/80 leading-7 text-sm">
               <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> Early sensor data was noisy and inconsistent; took significant time to separate signal from noise from real anomaly.</li>
-              <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> 3D mapping proved harder than expected; aligning sensor data with spatial position is non-trivial.</li>
+              <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> 3D mapping is harder than expected, specifically, aligning sensor data with spatial data.</li>
               <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> Magnetometer alone had fundamental depth limits, forcing a pivot to GPR.</li>
               <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> Six consecutive feature-engineering approaches in the ML model failed before switching to a neural network architecture.</li>
             </ul>
