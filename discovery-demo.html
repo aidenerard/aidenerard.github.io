@@ -1,385 +1,244 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Discovery Project | Aiden Erard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { color-scheme: dark; }
-    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; }
-    .bg-deep { background: radial-gradient(1200px 600px at 70% -10%, rgba(59,130,246,0.18), transparent 60%), radial-gradient(900px 500px at 10% 110%, rgba(59,130,246,0.12), transparent 60%), #0a0f1a; }
+    :root {
+      --bg: #fafafa;
+      --text: #1a1a1a;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --link: #2563eb;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 72px 24px 96px; }
+    h1 { font-size: 2.6rem; font-weight: 700; letter-spacing: -0.02em; margin: 0; }
+    .subtitle { color: var(--muted); font-size: 1.05rem; margin: 10px 0 0; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .links { display: flex; flex-wrap: wrap; gap: 22px; margin: 26px 0 0; }
+    .links a {
+      display: inline-flex; align-items: center; gap: 7px;
+      color: var(--text); font-size: 0.95rem; font-weight: 500;
+    }
+    .links a:hover { color: var(--link); text-decoration: none; }
+    .links svg { width: 17px; height: 17px; }
+
+    hr { border: 0; border-top: 1px solid var(--line); margin: 30px 0 0; }
+
+    .intro { margin-top: 48px; }
+    .intro::after { content: ""; display: block; clear: both; }
+    .intro img {
+      float: left; width: 240px; height: 240px; margin: 4px 36px 16px 0;
+      object-fit: cover; object-position: center 15%; border-radius: 14px;
+    }
+    .intro p { margin: 0 0 16px; color: #333; }
+    .intro p:first-of-type { margin-top: 0; }
+
+    section { margin-top: 56px; }
+    h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 22px; }
+
+    .item { margin-bottom: 28px; }
+    .item:last-child { margin-bottom: 0; }
+    .item h3 { font-size: 1.05rem; font-weight: 600; margin: 0 0 4px; }
+    .item p { margin: 0 0 8px; color: #444; }
+    .item .meta { font-size: 0.9rem; color: var(--muted); }
+    .item .item-links { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.9rem; }
+    .item .item-links a { font-weight: 500; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 46px; }
+    .tag {
+      font-size: 0.85rem; color: #444;
+      border: 1px solid var(--line); background: #fff;
+      padding: 4px 12px; border-radius: 999px;
+    }
+
+    footer { margin-top: 64px; color: var(--muted); font-size: 0.9rem; }
+
+    @media (max-width: 640px) {
+      .wrap { padding: 48px 20px 72px; }
+      h1 { font-size: 2.1rem; }
+      .intro img { width: 130px; height: 130px; margin: 4px 18px 10px 0; }
+    }
+
+    .back { display: inline-block; font-size: 0.95rem; font-weight: 500; margin-bottom: 36px; }
+    .page-title { font-size: 2.6rem; }
+    .tags.top { margin-top: 18px; }
+    .overview { margin: 40px 0 0; color: #333; }
+    .overview .lead { color: var(--muted); margin: 0 0 10px; }
+    .lead, .muted { color: var(--muted); }
+    section p { margin: 0 0 14px; color: #444; }
+    section p.muted { color: var(--muted); }
+    h3.sub { font-size: 1.05rem; font-weight: 600; margin: 22px 0 8px; }
+    ul.list, ol.list { margin: 0 0 16px; padding-left: 22px; color: #444; }
+    ul.list li, ol.list li { margin-bottom: 8px; }
+    .video { position: relative; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: #000; border: 1px solid var(--line); }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-bottom: 8px; }
+    .videos .cap { font-size: 0.85rem; font-weight: 600; color: #444; margin: 0 0 6px; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 8px; }
+    .gallery figure { margin: 0; }
+    .gallery img { width: 100%; height: auto; display: block; border-radius: 10px; border: 1px solid var(--line); background: #fff; cursor: zoom-in; }
+    .gallery figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 6px; }
+    .links-row { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.95rem; margin: 0 0 16px; }
+    #lightbox { position: fixed; inset: 0; z-index: 50; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,.88); }
+    #lightbox.open { display: flex; }
+    #lightbox img { max-width: 92vw; max-height: 90vh; border-radius: 10px; object-fit: contain; background: #fff; }
+    #lightbox button { position: absolute; top: 14px; right: 22px; background: none; border: 0; color: #fff; font-size: 2.4rem; cursor: pointer; line-height: 1; }
   </style>
 </head>
-<body class="bg-deep text-white/90">
+<body>
+  <main class="wrap">
 
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/20 backdrop-blur">
-    <div class="max-w-6xl mx-auto px-6 py-4">
-      <a href="index.html#projects" class="inline-flex items-center gap-2 text-white hover:underline">
-        <span aria-hidden="true">&lt;</span> Back to Portfolio
-      </a>
-    </div>
-  </header>
+    <a class="back" href="index.html#projects">&larr; Back to Portfolio</a>
 
-  <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+    <header>
+      <h1 class="page-title">Discovery Project</h1>
+      <p class="subtitle">ECE 1100 | Georgia Tech</p>
+      <div class="tags top"><span class="tag">CreateX</span><span class="tag">Embedded Systems</span><span class="tag">Signal Processing</span><span class="tag">ML Engineering</span></div>
+    </header>
 
-    <!-- Title -->
-    <section class="text-center mt-4">
-      <h1 class="text-5xl font-extrabold text-blue-400 tracking-tight">Discovery Project</h1>
-      <p class="mt-3 text-xl text-white/70">ECE 1100 | Georgia Tech</p>
-      <div class="mt-4 flex flex-wrap justify-center gap-2">
-        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-600/20 text-blue-300 border border-blue-500/30">CreateX</span>
-        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/5 text-white/60 border border-white/10">Embedded Systems</span>
-        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/5 text-white/60 border border-white/10">Signal Processing</span>
-        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/5 text-white/60 border border-white/10">ML Engineering</span>
+    <section>
+      <h2>Project Idea</h2>
+      <p class="muted">Built for CreateX and other GT startup programs</p>
+      <ul class="list">
+        <li>Started with a magnetometer to detect rebar and hidden metal inside concrete using grid-based magnetic field measurements</li>
+        <li>Added an RGB-D camera to tie sensor readings to physical position and build early 2D and 3D maps</li>
+        <li>Pivoted the idea toward drone-based inspection to eliminate lifts and scaffolding</li>
+        <li>Final direction: drone-mounted GPR with a gimbal to scan structures from a distance and get rebar depth without surface contact</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Project Progress</h2>
+      <ol class="list">
+        <li>Built a full embedded sensing pipeline with a Raspberry Pi and magnetometer: real-time logging, noise filtering, and 2D heatmap generation.</li>
+        <li>Ran real scans on a metal-embedded concrete slab and detected internal metal patterns in the output data.</li>
+        <li>Integrated RGB-D camera data to generate point clouds and early 3D mesh representations of scanned surfaces.</li>
+        <li>Recognized the commercial opportunity through CreateX and decided to pursue Verus, an AI platform automating GPR bridge deck analysis, replacing a largely manual inspection process.</li>
+        <li>Trained a 1D-CNN on over 650,000 labeled GPR signals across sixteen model versions, deployed a live inference server, and began inspecting real bridge data directly from a professional GPR firm.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Phase 1 Photos</h2>
+      <p class="muted">Magnetometer pipeline: hardware setup, raw data, and heatmap outputs before the pivot to Verus</p>
+      <div class="gallery">
+        <figure><img class="gallery-img" src="media/discovery/hardware-setup.jpg" alt="Drone with Raspberry Pi and magnetometer board" loading="lazy"><figcaption>Hardware setup</figcaption></figure>
+        <figure><img class="gallery-img" src="media/discovery/concrete-scan-2.png" alt="Manual magnetometer scan of concrete sample" loading="lazy"><figcaption>Manual scan, MMC5983MA over concrete sample</figcaption></figure>
+        <figure><img class="gallery-img" src="media/discovery/heatmap-idw.png" alt="IDW heatmap of local magnetic anomaly" loading="lazy"><figcaption>IDW heatmap, local anomaly detection</figcaption></figure>
+        <figure><img class="gallery-img" src="media/discovery/scatter-btotal.png" alt="XY scatter plot of total magnetic field" loading="lazy"><figcaption>XY scatter, B_total across scan grid</figcaption></figure>
+        <figure><img class="gallery-img" src="media/discovery/heatmap-early.png" alt="Early heatmap output" loading="lazy"><figcaption>Early heatmap output</figcaption></figure>
+        <figure><img class="gallery-img" src="media/discovery/sensor-data-csv.png" alt="Raw sensor data CSV log" loading="lazy"><figcaption>Raw sensor data log</figcaption></figure>
       </div>
     </section>
 
-    <!-- a. Project Idea -->
     <section>
-      <div class="rounded-2xl bg-white/5 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,.35)] p-6 md:p-8">
-        <h2 class="text-2xl font-bold mb-1">Project Idea</h2>
-        <p class="text-blue-300/80 text-sm mb-6">Built for CreateX and other GT startup programs</p>
-        <ul class="space-y-3 text-white/80 leading-7">
-          <li class="flex gap-3"><span class="text-blue-400 mt-1 flex-shrink-0">&#8226;</span>Started with a magnetometer to detect rebar and hidden metal inside concrete using grid-based magnetic field measurements</li>
-          <li class="flex gap-3"><span class="text-blue-400 mt-1 flex-shrink-0">&#8226;</span>Added an RGB-D camera to tie sensor readings to physical position and build early 2D and 3D maps</li>
-          <li class="flex gap-3"><span class="text-blue-400 mt-1 flex-shrink-0">&#8226;</span>Pivoted the idea toward drone-based inspection to eliminate lifts and scaffolding</li>
-          <li class="flex gap-3"><span class="text-blue-400 mt-1 flex-shrink-0">&#8226;</span>Final direction: drone-mounted GPR with a gimbal to scan structures from a distance and get rebar depth without surface contact</li>
-        </ul>
+      <h2>Phase 2 Photos</h2>
+      <p class="muted">Verus platform and GPR pipeline: live app, real bridge data, and AI output</p>
+      <div class="gallery">
+        <figure><img class="gallery-img" src="media/discovery/verus-app-ui.png" alt="Verus app inspection method panel" loading="lazy"><figcaption>Verus app UI</figcaption></figure>
+        <figure><img class="gallery-img" src="media/discovery/rebar-depth-map.png" alt="Bridge 440029 rebar depth contour map" loading="lazy"><figcaption>Bridge 440029 rebar depth map</figcaption></figure>
+        <figure><img class="gallery-img" src="media/discovery/cscan-condition-map.png" alt="C-SCAN bridge deck condition map" loading="lazy"><figcaption>C-SCAN condition map, 76,924 signals</figcaption></figure>
+        <figure><img class="gallery-img" src="media/discovery/gpr-signal-csv.png" alt="Raw GPR signal CSV data" loading="lazy"><figcaption>Raw GPR signal data</figcaption></figure>
+        <figure><img class="gallery-img" src="media/discovery/1dcnn-architecture.webp" alt="1D CNN architecture diagram" loading="lazy"><figcaption>1D-CNN model architecture</figcaption></figure>
       </div>
     </section>
 
-    <!-- b. Project Progress -->
     <section>
-      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8">
-        <h2 class="text-2xl font-bold mb-6">Project Progress</h2>
+      <h2>Successes &amp; Failures</h2>
+      <h3 class="sub">Successes</h3>
+      <ul class="list">
+        <li>Full hardware-software pipeline working end-to-end: sensor to Raspberry Pi to heatmaps.</li>
+        <li>Built and deployed a complete AI pipeline from raw GPR signals to a live web product.</li>
+        <li>Ranked top 10% at Y Combinator across two batches, secured a PearX Ventures interview, and competing in the Klaus Fusen World Competition.</li>
+      </ul>
+      <h3 class="sub">Failures</h3>
+      <ul class="list">
+        <li>Early sensor data was noisy and inconsistent; took significant time to separate signal from noise from real anomaly.</li>
+        <li>3D mapping is harder than expected, specifically, aligning sensor data with spatial data.</li>
+        <li>Magnetometer alone had fundamental depth limits, forcing a pivot to GPR.</li>
+        <li>Six consecutive feature-engineering approaches in the ML model failed before switching to a neural network architecture.</li>
+      </ul>
+    </section>
 
-        <!-- Video placeholder: uncomment and add YouTube ID when ready -->
-        <!--
-        <div class="aspect-video rounded-xl overflow-hidden bg-black/30 ring-1 ring-white/10 mb-8">
-          <iframe width="100%" height="100%"
-            src="https://www.youtube-nocookie.com/embed/VIDEO_ID?rel=0&modestbranding=1"
-            title="Project Progress" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <section>
+      <h2>ECE Skills Gained</h2>
+      <h3 class="sub">Embedded Systems</h3>
+      <p class="muted">I2C sensor integration with Raspberry Pi, hardware debugging across the full sensing pipeline.</p>
+      <h3 class="sub">Signal Processing</h3>
+      <p>GPR waveform filtering, amplitude analysis, and electromagnetic wave propagation in subsurface media.</p>
+      <h3 class="sub">ML Engineering</h3>
+      <p>1D CNNs in PyTorch, focal loss for class imbalance, weighted sampling, and precision-recall optimization.</p>
+      <h3 class="sub">Computer Vision</h3>
+      <p>RGB-D cameras, point cloud generation, and early 3D mesh construction from sensor data.</p>
+      <h3 class="sub">Systems Integration</h3>
+      <p>End-to-end pipeline from raw sensor data through preprocessing, neural network inference, server, and deployed frontend, all in one product.</p>
+    </section>
+
+    <section>
+      <h2>Final Thoughts</h2>
+      <ul class="list">
+        <li>I learned more from the failures than the successes. Debugging a noisy sensor pipeline, watching six ML approaches fail, figuring out why 3D alignment was breaking.</li>
+        <li>CreateX pushed me to think in terms of industry and real use cases, not just in terms of what would satisfy an ECE requirement. That shift in framing changed how I approached every technical decision.</li>
+        <li>The project continued after this class. Verus moved into Startup Launch over the summer, and we kept applying to other startup incubators.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Media</h2>
+      <div class="videos">
+        <div>
+          <p class="cap">PearX:Founder</p>
+          <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/y54mAY_ZxYY?rel=0&modestbranding=1" title="PearX Founder Video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         </div>
-        -->
-
-        <ol class="space-y-5">
-          <li class="flex gap-4">
-            <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">1</span>
-            <p class="text-white/80 leading-7">Built a full embedded sensing pipeline with a Raspberry Pi and magnetometer: real-time logging, noise filtering, and 2D heatmap generation.</p>
-          </li>
-          <li class="flex gap-4">
-            <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">2</span>
-            <p class="text-white/80 leading-7">Ran real scans on a metal-embedded concrete slab and detected internal metal patterns in the output data.</p>
-          </li>
-          <li class="flex gap-4">
-            <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">3</span>
-            <p class="text-white/80 leading-7">Integrated RGB-D camera data to generate point clouds and early 3D mesh representations of scanned surfaces.</p>
-          </li>
-          <li class="flex gap-4">
-            <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">4</span>
-            <p class="text-white/80 leading-7">Recognized the commercial opportunity through CreateX and decided to pursue Verus, an AI platform automating GPR bridge deck analysis, replacing a largely manual inspection process.</p>
-          </li>
-          <li class="flex gap-4">
-            <span class="flex-shrink-0 mt-1.5 w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-xs font-bold text-blue-300">5</span>
-            <p class="text-white/80 leading-7">Trained a 1D-CNN on over 650,000 labeled GPR signals across sixteen model versions, deployed a live inference server, and began inspecting real bridge data directly from a professional GPR firm.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Phase 1 Gallery -->
-    <section>
-      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8">
-        <h2 class="text-2xl font-bold mb-2">Phase 1 Photos</h2>
-        <p class="text-white/50 text-sm mb-6">Magnetometer pipeline: hardware setup, raw data, and heatmap outputs before the pivot to Verus</p>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-
-          <div>
-            <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/hardware-setup.jpg" alt="Drone with Raspberry Pi and magnetometer board" class="w-full h-auto gallery-img">
-            </div>
-            <p class="text-xs text-white/40 mt-1.5">Hardware setup</p>
-          </div>
-
-          <div>
-            <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/concrete-scan-2.png" alt="Manual magnetometer scan of concrete sample" class="w-full h-auto gallery-img">
-            </div>
-            <p class="text-xs text-white/40 mt-1.5">Manual scan, MMC5983MA over concrete sample</p>
-          </div>
-
-          <div>
-            <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/heatmap-idw.png" alt="IDW heatmap of local magnetic anomaly" class="w-full h-auto gallery-img">
-            </div>
-            <p class="text-xs text-white/40 mt-1.5">IDW heatmap, local anomaly detection</p>
-          </div>
-
-          <div>
-            <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/scatter-btotal.png" alt="XY scatter plot of total magnetic field" class="w-full h-auto gallery-img">
-            </div>
-            <p class="text-xs text-white/40 mt-1.5">XY scatter, B_total across scan grid</p>
-          </div>
-
-          <div>
-            <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/heatmap-early.png" alt="Early heatmap output" class="w-full h-auto gallery-img">
-            </div>
-            <p class="text-xs text-white/40 mt-1.5">Early heatmap output</p>
-          </div>
-
-          <div>
-            <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/sensor-data-csv.png" alt="Raw sensor data CSV log" class="w-full h-auto gallery-img">
-            </div>
-            <p class="text-xs text-white/40 mt-1.5">Raw sensor data log</p>
-          </div>
-
+        <div>
+          <p class="cap">PearX:Demo</p>
+          <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/a5z9hfaK3SU?rel=0&modestbranding=1" title="PearX Demo Video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </div>
+        <div>
+          <p class="cap">YC X26:Founder</p>
+          <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/LhaEIdsgELo?rel=0&modestbranding=1" title="YC X26 Founder Video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </div>
+        <div>
+          <p class="cap">YC X26:Demo</p>
+          <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/FVNtIBhANsE?rel=0&modestbranding=1" title="YC X26 Demo Video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </div>
+        <div>
+          <p class="cap">Startup Launch:Founder</p>
+          <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/7oQ3IdqPtwg?rel=0&modestbranding=1" title="Startup Launch Founder Video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         </div>
       </div>
     </section>
 
-    <!-- Phase 2 Gallery -->
-    <section>
-      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8">
-        <h2 class="text-2xl font-bold mb-2">Phase 2 Photos</h2>
-        <p class="text-white/50 text-sm mb-6">Verus platform and GPR pipeline: live app, real bridge data, and AI output</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-          <div>
-            <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/verus-app-ui.png" alt="Verus app inspection method panel" class="w-full h-auto gallery-img">
-            </div>
-            <p class="text-xs text-white/40 mt-1.5">Verus app UI</p>
-          </div>
-
-          <div>
-            <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/rebar-depth-map.png" alt="Bridge 440029 rebar depth contour map" class="w-full h-auto gallery-img">
-            </div>
-            <p class="text-xs text-white/40 mt-1.5">Bridge 440029 rebar depth map</p>
-          </div>
-
-          <div>
-            <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/cscan-condition-map.png" alt="C-SCAN bridge deck condition map" class="w-full h-auto gallery-img">
-            </div>
-            <p class="text-xs text-white/40 mt-1.5">C-SCAN condition map, 76,924 signals</p>
-          </div>
-
-          <div>
-            <div class="rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10">
-              <img src="media/discovery/gpr-signal-csv.png" alt="Raw GPR signal CSV data" class="w-full h-auto gallery-img">
-            </div>
-            <p class="text-xs text-white/40 mt-1.5">Raw GPR signal data</p>
-          </div>
-
-          <div>
-            <div class="rounded-xl overflow-hidden bg-white ring-1 ring-white/10">
-              <img src="media/discovery/1dcnn-architecture.webp" alt="1D CNN architecture diagram" class="w-full h-auto p-2 gallery-img">
-            </div>
-            <p class="text-xs text-white/40 mt-1.5">1D-CNN model architecture</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- c. Successes and Failures -->
-    <section>
-      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8">
-        <h2 class="text-2xl font-bold mb-6">Successes &amp; Failures</h2>
-
-        <!-- Video placeholder -->
-        <!--
-        <div class="aspect-video rounded-xl overflow-hidden bg-black/30 ring-1 ring-white/10 mb-8">
-          <iframe width="100%" height="100%"
-            src="https://www.youtube-nocookie.com/embed/VIDEO_ID?rel=0&modestbranding=1"
-            title="Successes and Failures" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        -->
-
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="rounded-xl bg-green-500/5 border border-green-500/20 p-5">
-            <h3 class="text-lg font-semibold text-green-400 mb-4">Successes</h3>
-            <ul class="space-y-3 text-white/80 leading-7 text-sm">
-              <li class="flex gap-2"><span class="text-green-400 mt-0.5">✓</span> Full hardware-software pipeline working end-to-end: sensor to Raspberry Pi to heatmaps.</li>
-              <li class="flex gap-2"><span class="text-green-400 mt-0.5">✓</span> Built and deployed a complete AI pipeline from raw GPR signals to a live web product.</li>
-              <li class="flex gap-2"><span class="text-green-400 mt-0.5">✓</span> Ranked top 10% at Y Combinator across two batches, secured a PearX Ventures interview, and competing in the Klaus Fusen World Competition.</li>
-            </ul>
-          </div>
-          <div class="rounded-xl bg-red-500/5 border border-red-500/20 p-5">
-            <h3 class="text-lg font-semibold text-red-400 mb-4">Failures</h3>
-            <ul class="space-y-3 text-white/80 leading-7 text-sm">
-              <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> Early sensor data was noisy and inconsistent; took significant time to separate signal from noise from real anomaly.</li>
-              <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> 3D mapping is harder than expected, specifically, aligning sensor data with spatial data.</li>
-              <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> Magnetometer alone had fundamental depth limits, forcing a pivot to GPR.</li>
-              <li class="flex gap-2"><span class="text-red-400 mt-0.5">✕</span> Six consecutive feature-engineering approaches in the ML model failed before switching to a neural network architecture.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- d. ECE Skills Gained -->
-    <section>
-      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8">
-        <h2 class="text-2xl font-bold mb-6">ECE Skills Gained</h2>
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div class="rounded-xl bg-white/5 border border-white/10 p-4">
-            <h3 class="text-sm font-semibold text-blue-300 uppercase tracking-wide mb-2">Embedded Systems</h3>
-            <p class="text-white/70 text-sm leading-6">I2C sensor integration with Raspberry Pi, hardware debugging across the full sensing pipeline.</p>
-          </div>
-          <div class="rounded-xl bg-white/5 border border-white/10 p-4">
-            <h3 class="text-sm font-semibold text-blue-300 uppercase tracking-wide mb-2">Signal Processing</h3>
-            <p class="text-white/70 text-sm leading-6">GPR waveform filtering, amplitude analysis, and electromagnetic wave propagation in subsurface media.</p>
-          </div>
-          <div class="rounded-xl bg-white/5 border border-white/10 p-4">
-            <h3 class="text-sm font-semibold text-blue-300 uppercase tracking-wide mb-2">ML Engineering</h3>
-            <p class="text-white/70 text-sm leading-6">1D CNNs in PyTorch, focal loss for class imbalance, weighted sampling, and precision-recall optimization.</p>
-          </div>
-          <div class="rounded-xl bg-white/5 border border-white/10 p-4">
-            <h3 class="text-sm font-semibold text-blue-300 uppercase tracking-wide mb-2">Computer Vision</h3>
-            <p class="text-white/70 text-sm leading-6">RGB-D cameras, point cloud generation, and early 3D mesh construction from sensor data.</p>
-          </div>
-          <div class="rounded-xl bg-white/5 border border-white/10 p-4 sm:col-span-2">
-            <h3 class="text-sm font-semibold text-blue-300 uppercase tracking-wide mb-2">Systems Integration</h3>
-            <p class="text-white/70 text-sm leading-6">End-to-end pipeline from raw sensor data through preprocessing, neural network inference, server, and deployed frontend, all in one product.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- e. Final Thoughts -->
-    <section>
-      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8">
-        <h2 class="text-2xl font-bold mb-6">Final Thoughts</h2>
-
-        <!-- Video placeholder -->
-        <!--
-        <div class="aspect-video rounded-xl overflow-hidden bg-black/30 ring-1 ring-white/10 mb-8">
-          <iframe width="100%" height="100%"
-            src="https://www.youtube-nocookie.com/embed/VIDEO_ID?rel=0&modestbranding=1"
-            title="Final Thoughts" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        -->
-
-        <ul class="space-y-3 text-white/80 leading-8 list-disc list-inside">
-          <li>I learned more from the failures than the successes. Debugging a noisy sensor pipeline, watching six ML approaches fail, figuring out why 3D alignment was breaking.</li>
-          <li>CreateX pushed me to think in terms of industry and real use cases, not just in terms of what would satisfy an ECE requirement. That shift in framing changed how I approached every technical decision.</li>
-          <li>The project is continuing after this class. Verus is moving into Startup Launch this summer and we're continuing to apply to other startup incubators.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Media -->
-    <section>
-      <div class="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8">
-        <h2 class="text-2xl font-bold mb-6">Media</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-
-          <div>
-            <p class="text-xs text-white/50 mb-2 font-medium uppercase tracking-wide">PearX:Founder</p>
-            <div class="aspect-video rounded-lg overflow-hidden bg-black/30 ring-1 ring-white/10">
-              <iframe width="100%" height="100%"
-                src="https://www.youtube-nocookie.com/embed/y54mAY_ZxYY?rel=0&modestbranding=1"
-                title="PearX Founder Video" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-          </div>
-
-          <div>
-            <p class="text-xs text-white/50 mb-2 font-medium uppercase tracking-wide">PearX:Demo</p>
-            <div class="aspect-video rounded-lg overflow-hidden bg-black/30 ring-1 ring-white/10">
-              <iframe width="100%" height="100%"
-                src="https://www.youtube-nocookie.com/embed/a5z9hfaK3SU?rel=0&modestbranding=1"
-                title="PearX Demo Video" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-          </div>
-
-          <div>
-            <p class="text-xs text-white/50 mb-2 font-medium uppercase tracking-wide">YC X26:Founder</p>
-            <div class="aspect-video rounded-lg overflow-hidden bg-black/30 ring-1 ring-white/10">
-              <iframe width="100%" height="100%"
-                src="https://www.youtube-nocookie.com/embed/LhaEIdsgELo?rel=0&modestbranding=1"
-                title="YC X26 Founder Video" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-          </div>
-
-          <div>
-            <p class="text-xs text-white/50 mb-2 font-medium uppercase tracking-wide">YC X26:Demo</p>
-            <div class="aspect-video rounded-lg overflow-hidden bg-black/30 ring-1 ring-white/10">
-              <iframe width="100%" height="100%"
-                src="https://www.youtube-nocookie.com/embed/FVNtIBhANsE?rel=0&modestbranding=1"
-                title="YC X26 Demo Video" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-          </div>
-
-          <div>
-            <p class="text-xs text-white/50 mb-2 font-medium uppercase tracking-wide">Startup Launch:Founder</p>
-            <div class="aspect-video rounded-lg overflow-hidden bg-black/30 ring-1 ring-white/10">
-              <iframe width="100%" height="100%"
-                src="https://www.youtube-nocookie.com/embed/7oQ3IdqPtwg?rel=0&modestbranding=1"
-                title="Startup Launch Founder Video" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
+    <footer>
+      &copy; <span id="year"></span> Aiden Erard
+    </footer>
 
   </main>
 
-  <!-- Lightbox -->
-  <div id="lightbox" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 hidden" role="dialog" aria-modal="true">
-    <button id="lightbox-close" class="absolute top-4 right-5 text-white/70 hover:text-white text-4xl font-light leading-none">&times;</button>
-    <img id="lightbox-img" src="" alt="" class="max-w-[90vw] max-h-[90vh] rounded-xl shadow-2xl object-contain">
-  </div>
-
-  <footer class="py-10 text-center text-sm text-white/60">© <span id="year"></span> Aiden Erard</footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-
-    document.querySelectorAll('.gallery-img').forEach(img => {
-      img.style.cursor = 'zoom-in';
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-
-    function closeLightbox() {
-      lightbox.classList.add('hidden');
-      lightboxImg.src = '';
-      document.body.style.overflow = '';
-    }
-
-    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  <div id="lightbox" role="dialog" aria-modal="true"><button id="lightbox-close" aria-label="Close">&times;</button><img id="lightbox-img" src="" alt=""></div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();
+    const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lightbox-img');
+    document.querySelectorAll('.gallery-img').forEach(img => img.addEventListener('click', () => { lbImg.src = img.src; lbImg.alt = img.alt; lb.classList.add('open'); document.body.style.overflow = 'hidden'; }));
+    function closeLb() { lb.classList.remove('open'); lbImg.src = ''; document.body.style.overflow = ''; }
+    document.getElementById('lightbox-close').addEventListener('click', closeLb);
+    lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
   </script>
 </body>
 </html>

@@ -41,13 +41,14 @@
 
     hr { border: 0; border-top: 1px solid var(--line); margin: 30px 0 0; }
 
-    .intro { display: flex; gap: 36px; align-items: flex-start; margin-top: 48px; }
+    .intro { margin-top: 48px; }
+    .intro::after { content: ""; display: block; clear: both; }
     .intro img {
-      width: 240px; height: 240px; flex-shrink: 0;
+      float: left; width: 240px; height: 240px; margin: 4px 36px 16px 0;
       object-fit: cover; object-position: center 15%; border-radius: 14px;
     }
-    .intro-text p { margin: 0 0 16px; color: #333; }
-    .intro-text p:first-child { margin-top: 0; }
+    .intro p { margin: 0 0 16px; color: #333; }
+    .intro p:first-of-type { margin-top: 0; }
 
     section { margin-top: 56px; }
     h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 22px; }
@@ -72,8 +73,7 @@
     @media (max-width: 640px) {
       .wrap { padding: 48px 20px 72px; }
       h1 { font-size: 2.1rem; }
-      .intro { flex-direction: column; gap: 24px; }
-      .intro img { width: 180px; height: 180px; }
+      .intro img { width: 130px; height: 130px; margin: 4px 18px 10px 0; }
     }
   </style>
 </head>
@@ -111,15 +111,14 @@
 
     <div class="intro">
       <img src="me.jpg" alt="Aiden Erard">
-      <div class="intro-text">
-        <p>Hi, I'm Aiden Erard.</p>
-        <p>I'm a Computer Engineering student at Georgia Tech. I chose Computer Engineering because I didn't want to choose between hardware and software. I wanted to understand both.</p>
-        <p>Most of my time outside class goes into personal projects, from autonomous drones to power monitoring systems to AI-powered apps. The one I've invested the most in is <a href="verus-core-demo.html">Verus</a>, an AI-powered platform for subsurface infrastructure inspection that I hope to keep building long into the future.</p>
-        <p>I'm still figuring out exactly where to focus, whether that's robotics, embedded systems, or autonomous vehicles, but I want to keep building things that are useful and keep pushing myself technically. <a href="about.html">Read more about me &rarr;</a></p>
-      </div>
+      <p>Hi, I'm Aiden Erard.</p>
+      <p>I'm a Computer Engineering student at Georgia Tech. I chose Computer Engineering because I didn't want to choose between hardware and software. I wanted to understand both.</p>
+      <p>I'm currently a software engineer intern at Theseus (YC S24), working on sensor fusion for GPS-denied drone navigation, and I do undergraduate research in the LiDAR Lab on bipedal robot navigation over challenging terrain. I also volunteer as a prototyping instructor at Georgia Tech's Invention Studio.</p>
+      <p>Outside of that, most of my time goes into projects, from drones to power monitoring systems to AI-powered apps. The one I've invested the most in is <a href="verus-core-demo.html">Verus</a>, an AI-powered platform for subsurface infrastructure inspection that I co-founded and have raised funding for. I also placed in the top 2 at Hacklytics with Tempr and top 5 at the Georgia Tech Energy Hackathon with GridGuard.</p>
+      <p>I'm still figuring out exactly where to focus, whether that's robotics, embedded systems, or autonomous vehicles, but I want to keep building things that are useful and keep pushing myself technically. <a href="about.html">Read more about me &rarr;</a></p>
     </div>
 
-    <section>
+    <section id="projects">
       <h2>Projects</h2>
 
       <div class="item">
@@ -214,14 +213,23 @@
       <h2>Skills</h2>
       <div class="tags">
         <span class="tag">Python</span>
-        <span class="tag">C++</span>
-        <span class="tag">HTML</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag">Swift</span>
         <span class="tag">Java</span>
-        <span class="tag">Robotics</span>
-        <span class="tag">SolidWorks</span>
+        <span class="tag">Rust</span>
+        <span class="tag">C</span>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
         <span class="tag">ROS</span>
+        <span class="tag">Raspberry Pi</span>
+        <span class="tag">Magnetometers</span>
+        <span class="tag">Pixhawk</span>
+        <span class="tag">LiDAR/RGB-D sensors</span>
+        <span class="tag">SLAM</span>
+        <span class="tag">Open3D</span>
+        <span class="tag">OpenCV</span>
+        <span class="tag">SolidWorks</span>
+        <span class="tag">Claude Code</span>
+        <span class="tag">Cursor</span>
+        <span class="tag">GitHub</span>
       </div>
     </section>
 
