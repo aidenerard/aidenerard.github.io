@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Verus Site | Aiden Erard</title>
+  <title>Verus | Aiden Erard</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -107,39 +107,63 @@
     <a class="back" href="index.html#projects">&larr; Back to Portfolio</a>
 
     <header>
-      <h1 class="page-title">Verus: Site</h1>
-      <p class="subtitle">Web Application</p>
+      <h1 class="page-title">Verus</h1>
+      <p class="subtitle">AI-powered ground penetrating radar analysis for bridge inspection</p>
     </header>
 
     <div class="overview">
-      <p class="lead">Web interface and visualization platform for Verus</p>
-      <p>Verus Site is the web application component of the Verus workspace platform. This frontend system provides an intuitive interface for simulation control, data visualization, and workspace management. The application connects to the Verus Core hardware systems to deliver a seamless user experience for simulation and visualization tasks.</p>
+      <p class="lead">A 1D CNN that reads ground penetrating radar signals to find hidden defects in bridge decks</p>
+      <p>Verus is an AI-powered data analysis platform for subsurface inspection of bridges, buildings, and other infrastructure. Inspectors collect ground penetrating radar (GPR) data, and Verus runs every signal through a convolutional neural network to flag likely delamination and estimate rebar depth, turning about 80 hours of manual review into minutes. I co-founded Verus and built the model and the full-stack platform around it. It grew out of the <a href="discovery-demo.html">Discovery Project</a> and my earlier work on <a href="fluxspace-demo.html">FluxSpace</a>.</p>
     </div>
 
     <section>
-      <h2>Demo Videos</h2>
-      <p class="muted">Video walkthrough coming soon.</p>
+      <h2>Demo Video</h2>
+      <div class="videos">
+        <div>
+          <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/gzeYOsGpGSk?rel=0&modestbranding=1" title="Verus Demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Results</h2>
+      <ul class="list">
+        <li>Trained a 1D CNN on 663,000+ annotated GPR signals, reaching 80% accuracy on real bridge decks the model had never seen</li>
+        <li>Cut GPR bridge deck analysis and decision making from about 80 hours of manual review to 5 minutes of automated analysis</li>
+        <li>Raised $155,000 at a $1.5M valuation</li>
+        <li>Ranked in the top 10% of the Y Combinator Winter and Spring 2026 batches and the PearX Summer 2026 batch</li>
+        <li>Winner of the Klaus Fusen World Competition; also supported by CREATE-X, Startup Exchange, and the Inventure Prize</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How It Works</h2>
+      <ul class="list">
+        <li><strong>Ingest:</strong> converts raw GPR formats (DZT, SEG-Y, DT1, RD3/RD7) and GPS data into a common signal format</li>
+        <li><strong>Model:</strong> a PyTorch 1D CNN classifies each signal for delamination; the production model went through 17 versions. A second model estimates rebar depth, with a physics-based fallback</li>
+        <li><strong>Training data:</strong> about 658,000 signals from five bridges in the SDNET2021 dataset, plus synthetic data from a numpy Ricker-wavelet generator and gprMax physics simulations, plus real Georgia Tech bridge scans</li>
+        <li><strong>Output:</strong> per-signal probabilities are assembled into C-scan condition maps and rebar depth maps for each inspected structure</li>
+        <li><strong>Platform:</strong> a FastAPI inference server on Render with a job queue, a React and TypeScript frontend with Mapbox maps, and Supabase for auth, projects, and storage</li>
+      </ul>
     </section>
 
     <section>
       <h2>Live Demo</h2>
-      <p class="muted">Explore the deployed Verus web application.</p>
-      <div class="links-row"><a href="https://fluxspace.vercel.app" target="_blank">Open Live Site</a></div>
+      <p>Try the deployed Verus platform.</p>
+      <div class="links-row"><a href="https://verus-brown.vercel.app" target="_blank">Open Verus</a><a href="https://www.try-verus.com/" target="_blank">Verus website</a></div>
     </section>
 
     <section>
       <h2>Code</h2>
-      <div class="links-row"><a href="https://github.com/aidenerard/fluxspace-site" target="_blank">View on GitHub</a></div>
+      <div class="links-row"><a href="https://github.com/aidenerard/verus" target="_blank">Code: Platform and model</a></div>
     </section>
 
     <section>
-      <h2>Key Features &amp; Impact</h2>
+      <h2>Tech Stack</h2>
       <ul class="list">
-        <li>Interactive web interface for simulation control and monitoring</li>
-        <li>Real-time data visualization and workspace management</li>
-        <li>Responsive design supporting multiple device types</li>
-        <li>Seamless integration with Verus Core hardware systems</li>
-        <li>User-friendly experience for complex simulation workflows</li>
+        <li>Python, PyTorch, FastAPI, gprMax</li>
+        <li>React, TypeScript, Tailwind CSS, Vite, Mapbox GL, Recharts</li>
+        <li>Supabase (Postgres, auth, storage), Render, Vercel, Docker</li>
       </ul>
     </section>
 

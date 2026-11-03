@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Verus Core | Aiden Erard</title>
+  <title>FluxSpace | Aiden Erard</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -107,13 +107,13 @@
     <a class="back" href="index.html#projects">&larr; Back to Portfolio</a>
 
     <header>
-      <h1 class="page-title">Verus: Core</h1>
-      <p class="subtitle">Hardware / Embedded</p>
+      <h1 class="page-title">FluxSpace</h1>
+      <p class="subtitle">Drone magnetometer mapping of rebar inside concrete</p>
     </header>
 
     <div class="overview">
-      <p class="lead">Hardware and embedded systems component of Verus</p>
-      <p>Verus Core is the hardware and embedded systems foundation of the Verus workspace platform. This component handles low-level device control, sensor integration, and real-time processing for simulation and visualization applications. The system is designed to interface with various hardware components and provide a robust foundation for the Verus ecosystem.</p>
+      <p class="lead">Autonomous magnetic mapping for hidden structural issues</p>
+      <p>FluxSpace was my first approach to subsurface inspection. It started with a magnetometer on a drone to map magnetic fields from rebar and other hidden metal inside concrete, and grew into a processing pipeline and a web platform. FluxSpace Core turns raw magnetic sensor data into clean maps that highlight unusual patterns, and the FluxSpace site lets users upload drone flight logs and get georeferenced anomaly heatmaps back. Limits on how deep a magnetometer can see led me to GPR, which became <a href="verus-demo.html">Verus</a>. The <a href="discovery-demo.html">Discovery Project</a> covers that path in detail.</p>
     </div>
 
     <section>
@@ -124,25 +124,41 @@
           <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/_2W7BZ65_qI?rel=0&modestbranding=1" title="YC Spring 2026 Demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         </div>
         <div>
-          <p class="cap">Verus Core Demo</p>
-          <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/FVNtIBhANsE?rel=0&modestbranding=1" title="Verus Core Demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+          <p class="cap">FluxSpace Core Demo</p>
+          <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/FVNtIBhANsE?rel=0&modestbranding=1" title="FluxSpace Core Demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>Code</h2>
-      <div class="links-row"><a href="https://github.com/aidenerard/fluxspace-core" target="_blank">View on GitHub</a></div>
+      <h2>Live Demo</h2>
+      <p>Explore the deployed FluxSpace web application.</p>
+      <div class="links-row"><a href="https://fluxspace.vercel.app" target="_blank">Open FluxSpace</a></div>
     </section>
 
     <section>
-      <h2>Key Features &amp; Impact</h2>
+      <h2>Code</h2>
+      <div class="links-row"><a href="https://github.com/aidenerard/fluxspace-core" target="_blank">Code: Core</a><a href="https://github.com/aidenerard/fluxspace-site" target="_blank">Code: Site</a></div>
+    </section>
+
+    <section>
+      <h2>Key Features</h2>
       <ul class="list">
-        <li>Low-level hardware control and device management</li>
-        <li>Real-time sensor data processing and integration</li>
-        <li>Efficient embedded systems architecture for performance-critical applications</li>
-        <li>Modular design enabling extensibility and customization</li>
-        <li>Robust error handling and system reliability</li>
+        <li>Core pipeline moves data from raw sensor readings to processed data to exported maps (CSV, PNG, and QGIS-ready layers)</li>
+        <li>Upload drone magnetometer CSV logs with time, position, altitude, attitude, and magnetic field data</li>
+        <li>Interactive map viewer with adjustable heatmap overlays and color scales</li>
+        <li>Dual-sensor support that computes magnetic field gradients for higher anomaly sensitivity</li>
+        <li>10 to 25 cm resolution grids with automatic UTM projection</li>
+        <li>Export results as GeoTIFFs, PNG previews, and CSV grids</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Tech Stack</h2>
+      <ul class="list">
+        <li>Python for the Core data pipeline</li>
+        <li>Next.js 14, TypeScript, TailwindCSS, MapLibre GL, and deck.gl for the site</li>
+        <li>Supabase for auth and storage, Stripe for subscriptions, Vercel for hosting</li>
       </ul>
     </section>
 
